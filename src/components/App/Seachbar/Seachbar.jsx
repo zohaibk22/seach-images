@@ -20,13 +20,15 @@ class SearchBar extends Component {
     }
     onInputClick = () => {
         console.log('input was clicked')
+        
 
     }
 
     onFormSubmit = (event) => {
         event.preventDefault();
         
-        console.log(this.state.userInput)
+        // console.log(this.state.userInput)
+        this.props.onSubmit(this.state.userInput)
         
     }
  
