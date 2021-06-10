@@ -6,7 +6,7 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.onSearchSubmit = this.onSearchSubmit.bind(this);
+    // this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.state = {
       userInput: "",
       images: [],
@@ -19,7 +19,7 @@ class App extends Component {
     });
   };
 
-  async onSearchSubmit(term) {
+  onSearchSubmit = async (term) => {
     // event.preventDefault();
     console.log(term);
     const response = await axios.get("https://api.unsplash.com/search/photos", {
@@ -32,7 +32,7 @@ class App extends Component {
     this.setState({
       images: response.data.results,
     });
-  }
+  };
   render() {
     return (
       <>
